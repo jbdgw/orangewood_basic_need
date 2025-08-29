@@ -1,26 +1,158 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* Orangewood Foundation Brand Colors - Actual Website Colors */
+  --background: 0 0% 100%; /* White */
+  --foreground: 0 0% 16%; /* Text Primary #282828 */
+  --primary: 199 91% 25%; /* Dark Teal #0B4971 */
+  --primary-foreground: 0 0% 100%; /* White */
+  --secondary: 56 33% 98%; /* Cream #F9F9F1 */
+  --secondary-foreground: 0 0% 16%; /* Text on cream */
+  --accent: 56 33% 98%; /* Cream backgrounds #F9F9F1 */
+  --accent-foreground: 0 0% 16%; /* Text on cream */
+  --success: 100 30% 74%; /* Light Green #AAD3A1 */
+  --success-foreground: 0 0% 16%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 0 0% 80%; /* Light Gray #CCCCCC */
+  --input: 0 0% 80%; /* Light Gray #CCCCCC */
+  --ring: 199 91% 25%; /* Deep Blue ring */
+  --text-secondary: 213 18% 50%; /* Text Secondary #6B7280 */
+  --accent-orange: 31 100% 56%; /* Orange Accent #FF9121 */
+  --light-cream: 57 33% 94%; /* Light Cream #F1F1DF */
+  --light-beige: 55 33% 89%; /* Light Beige #EAEAD2 */
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    /* Dark mode - maintain brand colors with dark backgrounds */
+    --background: 199 91% 10%; /* Dark blue background */
+    --foreground: 0 0% 98%; /* Light text */
+    --primary: 199 91% 35%; /* Lighter blue for dark mode */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 199 91% 15%; /* Dark blue secondary */
+    --secondary-foreground: 0 0% 98%;
+    --accent: 199 91% 15%; /* Dark background */
+    --accent-foreground: 0 0% 98%;
+    --success: 100 30% 74%; /* Keep light green */
+    --success-foreground: 0 0% 16%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 199 91% 20%;
+    --input: 199 91% 20%;
+    --ring: 199 91% 35%; /* Lighter blue ring */
+    --text-secondary: 213 18% 70%; /* Lighter secondary text for dark mode */
+    --accent-orange: 31 100% 56%; /* Keep orange accent */
+    --light-cream: 199 91% 20%; /* Dark equivalent */
+    --light-beige: 199 91% 18%; /* Dark equivalent */
   }
 }
 
+/* Typography - Orangewood Foundation Style */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 18px;
+  line-height: 1.48;
+  font-weight: 400;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  line-height: 1.12;
+  color: hsl(var(--foreground));
+  font-family: "Inter", system-ui, sans-serif;
+}
+
+h1 {
+  font-family: "contralto-medium", serif;
+  font-size: 3.5rem; /* Approximate 88px equivalent */
+  font-weight: 400;
+  letter-spacing: -0.025em;
+  line-height: 1.12;
+  color: #0B4971;
+}
+
+h2 {
+  font-size: 1rem; /* 16px as specified */
+  font-weight: 600;
+  line-height: 1.48;
+}
+
+h3 {
+  font-size: 1rem; /* 16px for consistency */
+  font-weight: 600;
+  line-height: 1.48;
+}
+
+/* Button and navigation text */
+button, .nav-text {
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 1rem; /* 16px */
+  font-weight: 600;
+  line-height: 1.48;
+}
+
+/* Statistics and impact numbers */
+.stat-number {
+  font-size: 3rem;
+  font-weight: 600;
+  color: hsl(var(--accent-orange));
+  line-height: 1.12;
+  font-family: "Inter", system-ui, sans-serif;
+}
+
+/* Text utilities */
+.text-secondary {
+  color: hsl(var(--text-secondary));
+}
+
+/* Brand-specific styles */
+.orangewood-primary {
+  color: hsl(var(--primary));
+}
+
+.orangewood-secondary {
+  color: hsl(var(--secondary));
+}
+
+.orangewood-teal {
+  color: hsl(var(--primary));
+}
+
+.orangewood-navy {
+  color: hsl(var(--secondary));
+}
+
+/* Component improvements */
+.btn-primary {
+  background: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+  border: 2px solid hsl(var(--primary));
+}
+
+.btn-primary:hover {
+  background: hsl(var(--primary) / 0.9);
+  box-shadow: 0 4px 12px hsl(var(--primary) / 0.3);
+}
+
+/* Progressive Enhancement - Respect user motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-delay: -1ms !important;
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    background-attachment: initial !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0s !important;
+    transition-delay: 0s !important;
+  }
 }
