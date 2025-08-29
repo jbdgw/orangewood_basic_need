@@ -12,17 +12,19 @@ export function Header() {
               <Image
                 src="/orangewood-logo.webp"
                 alt="Orangewood Foundation"
-                width={200}
-                height={40}
-                className="h-10 w-auto hover:opacity-80 transition-opacity"
+                width={280}
+                height={56}
+                className="h-14 w-auto hover:opacity-80 transition-opacity"
               />
             </a>
           </div>
 
           {/* Contact Button */}
-          <Button variant="default" size="sm">
-            Contact
-          </Button>
+          <a href="/contact">
+            <Button variant="default" size="default">
+              Contact
+            </Button>
+          </a>
         </div>
       </div>
     </header>
