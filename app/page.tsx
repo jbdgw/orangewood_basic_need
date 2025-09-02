@@ -7,9 +7,8 @@ import { Header } from "@/components/Header";
 import AnimatedShinyText from "@/components/magicui/animated-shiny-text";
 import MagicCard from "@/components/magicui/magic-card";
 
-// Tailwind-only. Uses shadcn-style class conventions, but no external imports required.
-// Drop this component into a Next.js page (e.g., app/page.tsx) and ensure Tailwind is enabled.
-// CTA currently logs to console. Replace with your checkout/donation flow.
+// Main donation storefront component
+// Handles kit selection, quantity validation, and donation processing
 
 const KITS = [
   {
@@ -181,7 +180,7 @@ export default function DonationStorefront() {
     // Simulate API call
     await new Promise(resolve => setTimeout(resolve, 1500));
     
-    // TODO: Integrate with your checkout platform (Stripe/Shopify/Cart).
+    // TODO: Replace with actual payment integration (see docs/API.md)
     console.log("DONATE:", payload);
     
     setIsSubmitting(false);
