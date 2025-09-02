@@ -1,12 +1,10 @@
 "use client";
 
+import React from "react";
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
-
-import { cn } from "@/lib/utils";
 
 interface BoxRevealProps {
-  children: JSX.Element;
+  children: React.ReactNode;
   width?: "fit-content" | "100%";
   boxColor?: string;
   duration?: number;
@@ -20,15 +18,6 @@ export const BoxReveal = ({
   duration,
   delay,
 }: BoxRevealProps) => {
-  const [isComplete, setIsComplete] = useState(false);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsComplete(true);
-    }, (delay || 0.5) * 1000 + (duration || 0.5) * 1000);
-
-    return () => clearTimeout(timer);
-  }, [delay, duration]);
 
   return (
     <div style={{ position: "relative", width, overflow: "hidden" }}>
@@ -78,7 +67,6 @@ export const BoxReveal = ({
           background: boxColor ?? "#5046e6",
           zIndex: 20,
         }}
-        onAnimationComplete={() => setIsComplete(true)}
       />
     </div>
   );

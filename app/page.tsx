@@ -2,11 +2,10 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import { ShoppingCart, CheckCircle2, Package, Shield, Sparkles, Loader2, Heart } from "lucide-react";
+import { CheckCircle2, Package, Shield, Sparkles, Loader2, Heart } from "lucide-react";
 import { Header } from "@/components/Header";
 import AnimatedShinyText from "@/components/magicui/animated-shiny-text";
 import MagicCard from "@/components/magicui/magic-card";
-import BoxReveal from "@/components/magicui/box-reveal";
 
 // Tailwind-only. Uses shadcn-style class conventions, but no external imports required.
 // Drop this component into a Next.js page (e.g., app/page.tsx) and ensure Tailwind is enabled.
@@ -281,7 +280,7 @@ export default function DonationStorefront() {
               </div>
 
               <div className="mb-6">
-                <h4 className="text-sm font-semibold mb-3">What's inside</h4>
+                <h4 className="text-sm font-semibold mb-3">What&apos;s inside</h4>
                 <div className="space-y-2 max-h-64 overflow-y-auto">
                   {selected.items.map((it, idx) => (
                     <div key={idx} className="flex items-center gap-3 p-3 rounded-xl border border-gray-100 hover:border-primary/30 hover:bg-gray-50/50 transition-all duration-200">
@@ -400,7 +399,7 @@ export default function DonationStorefront() {
           <div>
             <h3 className="text-lg font-bold">Need a custom kit?</h3>
             <p className="mt-2 text-sm text-text-secondary">
-              We can tailor kits (fragrance‑free, women's/men's, curly‑hair, etc.). Reach out and we'll swap items and update pricing.
+              We can tailor kits (fragrance‑free, women&apos;s/men&apos;s, curly‑hair, etc.). Reach out and we&apos;ll swap items and update pricing.
             </p>
           </div>
         </div>

@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { Header } from "@/components/Header";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Mail, Phone, MapPin, Send, CheckCircle2, ArrowLeft } from "lucide-react";
 
@@ -48,7 +49,7 @@ export default function ContactPage() {
             <CheckCircle2 className="mx-auto h-16 w-16 text-success mb-6" />
             <h1 className="text-3xl font-bold text-primary mb-4">Thank You!</h1>
             <p className="text-lg text-text-secondary mb-6">
-              We've received your message and will get back to you within 24 hours.
+              We&apos;ve received your message and will get back to you within 24 hours.
             </p>
             <Button onClick={() => setIsSubmitted(false)} variant="outline">
               Send Another Message
@@ -64,18 +65,18 @@ export default function ContactPage() {
       <Header />
       <main className="mx-auto max-w-6xl px-6 py-12">
         <div className="mb-8">
-          <a href="/">
+          <Link href="/">
             <Button variant="outline" className="inline-flex items-center gap-2">
               <ArrowLeft className="h-4 w-4" />
               Back to Kits
             </Button>
-          </a>
+          </Link>
         </div>
         
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-primary mb-4">Contact Us</h1>
           <p className="text-xl text-text-secondary max-w-2xl mx-auto">
-            Have questions about sponsoring hygiene kits or want to learn more about our partnership? We'd love to hear from you.
+            Have questions about sponsoring hygiene kits or want to learn more about our partnership? We&apos;d love to hear from you.
           </p>
         </div>
 
@@ -242,9 +243,9 @@ export default function ContactPage() {
         <div className="mt-16 text-center">
           <h3 className="text-lg font-bold mb-4">Quick Questions?</h3>
           <div className="flex flex-wrap gap-4 justify-center text-sm">
-            <a href="/#faq" className="text-primary hover:text-primary/80 underline">
+            <Link href="/#faq" className="text-primary hover:text-primary/80 underline">
               View FAQ Section
-            </a>
+            </Link>
             <a href="https://orangewoodfoundation.org" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80 underline">
               About Orangewood Foundation
             </a>
